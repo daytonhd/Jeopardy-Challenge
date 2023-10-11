@@ -11,24 +11,26 @@
 struct clue 
 {
 	
-	char * clue_info; //Statement of clue 
+	char * info; //Statement of clue 
 
-	char * clue_answer; //The answer to the clue 
+	char * answer; //The answer to the clue 
 
 	char * fun_fact; //A fun fact surrounding the category's clue
 
 	float prize; //Prize amount if clue is answered correctly 
+
+	clue * next;
 };
 
 
 struct category // Holds category's names, pointer to next category, head pointer to corresponding list of clues
 {
-	
-	char * name; //Name of trivia category
 
-	clue * head; //Pointer to clue information
+	char * name;
 
-	category * next; //Pointer to next category 
+	category * next;
+
+	clue * clue_head; //Pointer to clue information
 
 };
 class CS_Trivia
@@ -43,16 +45,15 @@ class CS_Trivia
 		~CS_Trivia(); //Destructor - Deallocates the dynamically allocated memory
 
 
-		int add_category(char * name); //Function to add or read in a category name - will return an error message if said category already exists
+		int add_category(char a_name[]); //Function to add or read in a category name - will return an error message if said category already exists
 
-		
-	/*	int display_cateogories(); //Function to display all categories (names)
+		int display_categories()const; //Function to display all categories (names)
 
 	
-		int add_clue(char * & clue_info[],char clue_answer[],char fun_fact[],float prize); //Function to add a clue to it's corresponding category - will read in the clue, the answer, and the prize amount for a correct answer
+		int add_clue(char clue_category[],char info[],char answer[],char fun_fact[],float prize); //Function to add a clue to it's corresponding category - will read in the clue, the answer, and the prize amount for a correct answer
 
 
-		int retrieve(char name[],char file_name); //Function to read in a categories clue from external data file
+/*		int retrieve(char name[],char file_name); //Function to read in a categories clue from external data file
 
 
 		int display_prize(char name[]); //Function to display the prizes for a certain category - categories name must be passed in 
@@ -66,22 +67,6 @@ class CS_Trivia
 	private: 
 		
 		category * head;
-
-		category * tail;
-
-
-
-		
-
-		
-		
-
-
-		
-		
-		
-		
-		
 
 
 	
