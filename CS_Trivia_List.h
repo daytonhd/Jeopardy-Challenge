@@ -53,16 +53,16 @@ class CS_Trivia
 		int add_clue(char clue_category[],char info[],char answer[],char fun_fact[],float prize); //Function to add a clue to it's corresponding category - will read in the clue, the answer, and the prize amount for a correct answer
 
 
-/*		int retrieve(char name[],char file_name); //Function to read in a categories clue from external data file
+		int retrieve(char name[],char category_file[]); //Function to read in a categories clue from external data file
 
 
 		int display_prize(char name[]); //Function to display the prizes for a certain category - categories name must be passed in 
 		
 		
-		int matching_clue(char name[],char clue_answer[],float prize); //Function to display the matching clue corresponding to a categories name and prize amount (read in)
+		int matching_clue(char name[],float prize); //Function to display the matching clue corresponding to a categories name and prize amount (read in)
 
 		
-		int remove_category(char name[]); //Function to remove a category */
+		int remove_category(char a_name[]); //Function to remove a category */
 
 	private: 
 		

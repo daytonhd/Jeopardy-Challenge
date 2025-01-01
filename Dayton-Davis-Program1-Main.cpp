@@ -19,12 +19,14 @@ int main()
 	char fun_fact[75];
 
 	float prize; 
+
+	char category_file[50];
 	
 	int client_choice;
 	
 	CS_Trivia item;	
 	
-	while(client_choice != 3)
+	while(client_choice != 8)
 	{
 		
 		cout << "MENU" << endl;
@@ -32,10 +34,20 @@ int main()
 		cout << "1. ADD CATEGORY " << endl;
 
 		cout << "2. ADD CLUE INFORMATION" << endl;
-
-		cout << "3. QUIT" << endl;
 		
-		cout << "4. DISPLAY ALL CATEGORIES" << endl;
+		cout << "3. DISPLAY ALL CATEGORIES" << endl;
+
+		cout << "4. ADD CLUE TO EXTERNAL FILE" << endl;
+
+		cout << "5. DISPLAY ALL PRIZES FOR A CATEGORY" << endl;
+
+		cout << "6. DISPLAY A PARTICULAR CLUE FOR A PRIZE IN A CATEGORY" << endl;
+
+		cout << "7. DELETE A CATEGORY" << endl;
+
+		cout << "8. QUIT" << endl;
+		
+		
 
 		cout << "PROGRAM NAVIGATION CHOICE: " << endl;
 
@@ -112,7 +124,7 @@ int main()
 			}	
 		}
 			
-		if(client_choice == 4)
+		if(client_choice == 3)
 		{
 		
 			cout << "DISPLAYING CATEGORIES..." << endl;
@@ -124,50 +136,114 @@ int main()
 				cout << "EMPTY LIST OF CATEGORIES" << endl;
 			}
 		}
+		if(client_choice == 4)
+		{
 
-	}
+			cout << "ENTER THE NAME OF THE CATEGORY YOU WOULD LIKE TO ADD THE CLUE TO: " << endl;
 
+			cin.get(a_name,21,'\n');
+			cin.ignore(100,'\n');
 
+			cout << "ENTER THE CATEGORIES FILE NAME: " << endl;
+
+			cin.get(category_file,50,'\n');
+			cin.ignore(100,'\n');
+
+			
+			if(item.retrieve(a_name,category_file) == 1)
+			{
+
+				cout << "SUCCESS" << endl;
+
+			}
+			if(item.retrieve(a_name,category_file) == 2)
+			{
+			
+				cout << "ERROR" << endl;	
+
+			}
+
+		}
+		if(client_choice == 5)
+		{
+
+			
+			cout << "ENTER THE NAME OF THE CATEGORY TO DISPLAY IT'S PRIZES: " << endl;
+
+			
+			cin.get(a_name,21,'\n');
+
+			cin.ignore(100,'\n');
+
+			int result = item.display_prize(a_name);
+
+			if(result == 0)
+			{
+
+				cout << "THERE IS NO CATEGORY BY THAT NAME" << endl;
+
+			}
+			else
+			{
+
+				cout << "PRIZES DISPLAYED" << endl;
+
+			}
+
+		}
+		if(client_choice == 6)
+		{
+
+			cout << "ENTER THE NAME OF THE CATEGORY: " << endl;
+
+			cin.get(a_name,21,'\n');
+
+			cin.ignore(100,'\n');
+
+			cout << "ENTER THE PRIZE OF THE CATEGORY: " << endl;
+
+			cin >> prize;
+
+			cin.ignore(100,'\n');
 	
+			if(item.matching_clue(a_name,prize)==1)
+			{
 
+				cout << "CORRECT ANSWER" << endl;
 
+			}
+			else
+			{
 
+				cout << "THERE IS NO CLUE FOR THAT PRIZE " << endl;
+			
+			}
 
+		}		
+		if(client_choice == 7)
+		{
 
+			cout << "WHAT IS THE CATEGORY YOU'D LIKE TO REMOVE?" << endl;
 
+			cin.get(a_name,21,'\n');
 
+			cin.ignore(100,'\n');
 
+			if(item.remove_category(a_name) == 0)
+			{
 
+				cout << "ONLY ONE CATEGORY IN LIST" << endl;
 
+				cout << "CATEGORY DELETED" << endl;
+			}
+			if(item.remove_category(a_name) == 1)
+			{
 
+				cout << "CATEGORY DELETED" << endl;
+			}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+		}
+	}
 
 
 
