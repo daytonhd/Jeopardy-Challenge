@@ -1,9 +1,10 @@
-//Dayton Davis-CS163-001-"CS_Trivia.cpp"
-//The purpose of this file is to contain the operations of the functions laid out in the Abstract Data Type represented by the class in the file "CS_Trivia_List.h". This file will also contain the operations that work with the external data file containing the categories clue information. 
+//The purpose of this file is to hold  the operations of the functions laid out in the ADT  represented by the class in the file "CS_Trivia_List.h". This file will also contain the operations that work with the external data file containing the categories clue information. 
 
 
 #include "CS_Trivia_List.h"
 #include <fstream> 
+
+using namespace std;
 
 CS_Trivia::CS_Trivia() //Constructor
 {
@@ -11,7 +12,6 @@ CS_Trivia::CS_Trivia() //Constructor
 	head = NULL; //Initializing head pointer
 
 }
-
 CS_Trivia::~CS_Trivia() //Destructor 
 {
 
@@ -27,10 +27,8 @@ CS_Trivia::~CS_Trivia() //Destructor
 		head = temp;
 	}		
 }
-
 int CS_Trivia::add_category(char a_name[]) //Function to add a category to LLL of categories 
 {
-	
 
 	if(head == NULL) //If list is empty 
 	{
@@ -66,7 +64,6 @@ int CS_Trivia::add_category(char a_name[]) //Function to add a category to LLL o
 }
 int CS_Trivia::display_categories() const //Function to display all categories in LLL
 {
-
 
 	category * temp {nullptr}; //Creating a temporary null pointer for a category
 
@@ -138,8 +135,6 @@ int CS_Trivia::add_clue(char clue_category[],char info[],char answer[],char fun_
 			//temp_clue->next = current->clue_head; //End of clue list
 
 			//current->clue_head = temp_clue;
-
-			
 
 			if(current->clue_head == NULL) //If there's no list of clues for this category (Empty)
 			{

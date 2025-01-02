@@ -1,6 +1,4 @@
-//Dayton Davis-CS163-001-Program 1-"CS_Trivia_List.h"
-//Purpose of Header File: contain Abstract Data Type - CS_Trivia class - to hold and perform operations on data for a Jeopardy Trivia Game. 
-
+//Purpose of this header file: class ADT containg the data for this Jeopardy Trivia Game. 
 
 
 #include <iostream>

@@ -1,7 +1,4 @@
-//Dayton Davis - CS163-001 - Program1 - "Dayton-Davis-Program1-Main.cpp"
-//Purpose of file: Contains client program for CS Jeoprady Trivia Game, test program for Abstract Data Type Implimentation 
-
-
+//Purpose of file: Contains client program a Jeoprady Trivia Game, program for ADT implimentation 
 
 #include "CS_Trivia_List.h"
 using namespace std;
@@ -29,6 +26,8 @@ int main()
 	while(client_choice != 8)
 	{
 		
+		cout << " - - - - - - - - - - - - - " << endl;		
+
 		cout << "MENU" << endl;
 
 		cout << "1. ADD CATEGORY " << endl;
@@ -47,7 +46,7 @@ int main()
 
 		cout << "8. QUIT" << endl;
 		
-		
+		cout << " - - - - - - - - - - - - - " << endl;		
 
 		cout << "PROGRAM NAVIGATION CHOICE: " << endl;
 
@@ -244,14 +243,5 @@ int main()
 
 		}
 	}
-
-
-
-
-
-
-
 	return 0;
-
-
 }
